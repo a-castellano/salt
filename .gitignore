@@ -1,1 +1,2 @@
 *.log
+Vagrant/.vagrant/*
