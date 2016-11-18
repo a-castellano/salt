@@ -12,9 +12,9 @@ else
         echo "192.168.50.10   saltmaster" >> /etc/hosts
 fi
 
-for i in $(seq 1 $2)
+for i in $( seq 1 $2 )
 do
-        echo "192.168.50.1$i   saltminion$1" >> /etc/hosts
+        echo "192.168.50.1$i  saltminion$i" >> /etc/hosts
 done
 
 locale-gen es_ES.UTF-8
