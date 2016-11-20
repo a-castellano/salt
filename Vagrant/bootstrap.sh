@@ -12,6 +12,7 @@ else
         echo "192.168.50.10   saltmaster" >> /etc/hosts
         cp /vagrant/files/minion /etc/salt/minion
         echo "id: saltminion$i" >> /etc/salt/minion
+        service salt-minion restart
 fi
 
 for i in $( seq 1 $2 )
