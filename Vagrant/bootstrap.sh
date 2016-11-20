@@ -7,6 +7,7 @@ if [ "$1" == "saltmaster" ]
 then
         apt-get install -y salt-master
         echo "127.0.0.1   saltmaster" >> /etc/hosts
+        git clone https://github.com/a-castellano/salt.git /srv/salt
 else
         apt-get install -y salt-minion
         echo "192.168.50.10   saltmaster" >> /etc/hosts
