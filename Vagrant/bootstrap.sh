@@ -10,6 +10,8 @@ then
 else
         apt-get install -y salt-minion
         echo "192.168.50.10   saltmaster" >> /etc/hosts
+        cp /vagrant/files/minion /etc/salt/minion
+        echo "id: saltminion$i" >> /etc/salt/minion
 fi
 
 for i in $( seq 1 $2 )
