@@ -11,7 +11,7 @@ else
         apt-get install -y salt-minion
         echo "192.168.50.10   saltmaster" >> /etc/hosts
         cp /vagrant/files/minion /etc/salt/minion
-        echo "id: saltminion$i" >> /etc/salt/minion
+        echo "id: $(uname -n)" >> /etc/salt/minion
         service salt-minion restart
 fi
 
