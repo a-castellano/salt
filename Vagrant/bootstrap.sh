@@ -5,7 +5,7 @@ apt-get upgrade -y
 
 if [ "$1" == "saltmaster" ]
 then
-        apt-get install -y salt-master python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg 
+        apt-get install -y salt-master python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich
 	pip install --upgrade pip
 	pip install ioflo msgpack-pure timelib
         echo "127.0.0.1   saltmaster" >> /etc/hosts

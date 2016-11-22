@@ -5,8 +5,13 @@ state_output: mixed
 file_roots:
   base:
       - /srv/salt/states
-      - /srv/salt/formulas
 
 pillar_roots:
   base:
       - /srv/salt/pillar
+
+fileserver_backend:
+  - git
+
+gitfs_remotes:
+  - https://github.com/saltstack-formulas/apache-formula.git
