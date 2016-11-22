@@ -4,7 +4,7 @@ state_output: mixed
 
 file_roots:
   base:
-      - /srv/salt/salt
+      - /srv/salt/states
       - /srv/salt/formulas
 
 pillar_roots:
