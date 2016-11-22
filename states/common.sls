@@ -5,5 +5,5 @@ install_common_packages:
       - rsync
       - sudo
       - htop
-      - vim
+      - {{ pillar['editor'] }}
       - screen
