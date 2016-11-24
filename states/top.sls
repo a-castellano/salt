@@ -1,7 +1,7 @@
+include:
+   - apache
+
 base:
   '*':
     - common
-  'saltminion1':
-    - nettools
-  'saltminion2':
-    - apache2
+    - apache
