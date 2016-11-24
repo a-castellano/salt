@@ -4,16 +4,19 @@ hash_type: sha512
 
 state_output: mixed
 
+fileserver_backend:
+  - roots
+  - git
+
+gitfs_provider: pygit2
+
 file_roots:
   base:
       - /srv/salt/states
 
+gitfs_remotes:
+  - https://github.com/a-castellano/apache-formula.git
+
 pillar_roots:
   base:
       - /srv/salt/pillar
-
-fileserver_backend:
-  - git
-
-gitfs_remotes:
-  - https://github.com/saltstack-formulas/apache-formula.git
