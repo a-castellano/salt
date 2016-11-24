@@ -1,5 +1,7 @@
 worker_threads: 15
 
+hash_type: sha512
+
 state_output: mixed
 
 file_roots:
