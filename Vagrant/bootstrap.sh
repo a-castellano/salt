@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-add-apt-repository ppa:saltstack/salt
-
 apt-get update -y
 apt-get upgrade -y
 
