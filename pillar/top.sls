@@ -1,3 +1,3 @@
 base:
   '*':
-    - default
+    - environments.common.environment
