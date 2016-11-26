@@ -11,7 +11,6 @@ vagrant up
 After creating the VM's we need to add saltminions keys
 
 ```
-salt-key -a saltminion1
-salt-key -a saltminion2
+salt-key -A
 salt '*' saltutil.sync_all
 ```
