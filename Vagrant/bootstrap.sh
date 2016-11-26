@@ -1,13 +1,33 @@
 #!/usr/bin/env bash
 
+add-apt-repository ppa:saltstack/salt -y
+
 apt-get update -y
 apt-get upgrade -y
 
 if [ "$1" == "saltmaster" ]
 then
-        apt-get install -y salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich
+        apt-get install -y zsh salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich vim vim-nox python-dev python3-dev cmake python3-pip
 	pip install --upgrade pip
 	pip install ioflo msgpack-pure timelib
+        pip3 install thefuck
+
+        wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+        chsh -s /bin/zsh vagrant
+
+        mkdir ~/workspace
+        git clone https://github.com/a-castellano/myconfigs.git ~/workspace/myconfigs
+
+        ln -s ~/workspace/myconfigs/zsh/acastellano.zsh-theme ~/.oh-my-zsh/themes
+        rm ~/.zshrc
+        ln -s ~/workspace/myconfigs/zsh/.zshrc ~/.zshrc
+
+        ln -s ~/workspace/myconfigs/vim/.vimrc ~/.vimrc
+        mkdir -p ~/.vim/bundle
+
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        vim +PluginInstall +qall
+
         echo "127.0.0.1   saltmaster" >> /etc/hosts
         git clone https://github.com/a-castellano/salt.git /srv/salt
         cp /vagrant/files/master /etc/salt/master
