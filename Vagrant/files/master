@@ -8,7 +8,7 @@ fileserver_backend:
   - roots
   - git
 
-gitfs_provider: pygit2
+gitfs_provider: GitPython
 
 file_roots:
   base:
@@ -16,6 +16,11 @@ file_roots:
 
 gitfs_remotes:
   - https://github.com/a-castellano/apache-formula.git
+
+gitfs_env_whitelist:
+  - base
+  - test
+  - dev
 
 pillar_roots:
   base:
