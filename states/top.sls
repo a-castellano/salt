@@ -3,4 +3,4 @@ include:
 
 base:
   '*':
-    - common
+    - states.common
