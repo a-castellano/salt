@@ -3,4 +3,5 @@ include:
 
 base:
   '*':
-    - states.common
+    - states.common.authorized_keys
+    - states.common.pkgs

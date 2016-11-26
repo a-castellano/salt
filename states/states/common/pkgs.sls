@@ -1,5 +1,3 @@
-{%- for package in pillar['common']['essential_pkgs'].iteritems() -%}
-
-  pkg.install: {{ package }}
-
-{%- endfor -%}
+install_essential_packages:
+  pkg.installed:
+  - pkgs: pillar['common']['essential_pkgs']
