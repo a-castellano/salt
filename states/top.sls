@@ -3,5 +3,5 @@ include:
 
 base:
   '*':
-    - states.common.authorized_keys
+    - states.common.ssh_auth
     - states.common.pkgs

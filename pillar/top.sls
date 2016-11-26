@@ -1,3 +1,4 @@
 base:
   '*':
-    - environments.common.environment
+    - environments.common.pkgs
+    - environments.common.auth
