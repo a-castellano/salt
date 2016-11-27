@@ -17,6 +17,7 @@ file_roots:
 gitfs_remotes:
   - https://github.com/a-castellano/apache-formula.git
   - https://github.com/a-castellano/openssh-formula.git
+  - https://github.com/a-castellano/users-formula.git
 
 gitfs_env_whitelist:
   - base
