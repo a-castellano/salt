@@ -5,3 +5,4 @@ base:
 
   'saltminion*':
     - environments.windcluster.auth
+    - environments.windcluster.mysql
