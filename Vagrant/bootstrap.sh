@@ -7,7 +7,7 @@ locale-gen en_GB.UTF-8
 
 if [ "$1" == "saltmaster" ]
 then
-        apt-get install -y zsh salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich vim vim-nox python-dev python3-dev cmake python3-pip
+        apt-get install -y tree zsh salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich vim vim-nox python-dev python3-dev cmake python3-pip
 	pip install --upgrade pip3
 	pip install ioflo msgpack-pure timelib
 	pip3 install 
