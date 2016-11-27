@@ -18,18 +18,12 @@ mysql:
     root_password: 'toor'
     user: mysql
     host: 192.168.10.12
+    log_bin: /var/log/mysql/mysql-bin.log
     mysqld:
       # you can use either underscore or hyphen in param names
       bind-address: 192.168.10.0/24
-      log_bin: /var/log/mysql/mysql-bin.log
       datadir: /var/lib/mysql
       port: 3306
-      auto_increment_increment: 5
-      binlog-ignore-db:
-       - mysql
-       - sys
-       - information_schema
-       - performance_schema
 
     mysql:
       # my.cnf param that not require value
