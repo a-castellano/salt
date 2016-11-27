@@ -8,7 +8,7 @@
 /root/.ssh/id_rsa:
   file.managed:
     - source:
-      - salt://states/states/windcluster/files/id_rsa
+      - salt://states/windcluster/files/id_rsa
     - force: True
     - user: root
     - group: root
@@ -18,7 +18,7 @@
 /root/.ssh/id_rsa.pub:
   file.managed:
     - source:
-      - salt://states/states/windcluster/files/id_rsa.pub
+      - salt://states/windcluster/files/id_rsa.pub
     - force: True
     - user: root
     - group: root
