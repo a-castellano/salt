@@ -6,8 +6,9 @@ apt-get upgrade -y
 if [ "$1" == "saltmaster" ]
 then
         apt-get install -y zsh salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich vim vim-nox python-dev python3-dev cmake python3-pip
-	pip install --upgrade pip
+	pip install --upgrade pip3
 	pip install ioflo msgpack-pure timelib
+	pip3 install 
         pip3 install thefuck
 
         wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
