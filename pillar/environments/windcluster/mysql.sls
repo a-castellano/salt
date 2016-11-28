@@ -21,7 +21,7 @@ mysql:
     log_bin: /var/log/mysql/mysql-bin.log
     mysqld:
       # you can use either underscore or hyphen in param names
-      bind-address: 192.168.10.0/24
+      bind-address: 192.168.10.12
       datadir: /var/lib/mysql
       port: 3306
 
