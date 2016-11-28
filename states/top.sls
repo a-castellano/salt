@@ -6,8 +6,8 @@ base:
   'saltminion*':
     - states.windcluster.root_ssh_key
 
-#  'saltminion1':
-#    - states.windcluster.mysql_client
+  'saltminion1':
+    - states.windcluster.mysql_client
 
   'saltminion2':
     - states.windcluster.mysql
