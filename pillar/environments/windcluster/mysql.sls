@@ -17,7 +17,6 @@ mysql:
     root_user: 'root'
     root_password: 'toor'
     user: mysql
-    host: 192.168.50.12
     log_bin: /var/log/mysql/mysql-bin.log
     mysqld:
       # you can use either underscore or hyphen in param names
@@ -31,7 +30,12 @@ mysql:
 
     salt_user:
       salt_user_name: 'root'
-      salt_user_password: 'toor
-'
+      salt_user_password: 'toor'
       grants:
         - 'all privileges'
+
+root_all:
+  mysql_grants.present:
+    - grant: all privileges
+    - user: root
+    - host: saltminion1
