@@ -1,3 +1,6 @@
+include:
+  - mysql.user
+
 /root/.my.cnf:
   file:
     - managed
@@ -9,3 +12,4 @@
 
 mysql-client:
   pkg.installed
+

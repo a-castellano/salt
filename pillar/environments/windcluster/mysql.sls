@@ -18,6 +18,7 @@ mysql:
     root_password: 'toor'
     user: mysql
     log_bin: /var/log/mysql/mysql-bin.log
+    host: 192.168.50.12
     mysqld:
       # you can use either underscore or hyphen in param names
       bind-address: 192.168.50.12
@@ -34,8 +35,14 @@ mysql:
       grants:
         - 'all privileges'
 
-root_all:
-  mysql_grants.present:
-    - grant: all privileges
-    - user: root
-    - host: saltminion1
+
+  user:
+    root:
+      password: 'toor'
+      database: '*'
+      host: '%'
+      grants: ['all privileges']
+
+
+
+
