@@ -1,4 +1,13 @@
 mysql:
+
+  host: 'localhost'
+  port: 3306
+  user: 'root'
+  pass: 'toor'
+  db: 'mysql'
+  unix_socket: '/tmp/mysql.sock'
+  charset: 'utf8'
+
   global:
     client-server:
       default_character_set: utf8
@@ -18,7 +27,7 @@ mysql:
     root_password: 'toor'
     user: mysql
     log_bin: /var/log/mysql/mysql-bin.log
-    host: 192.168.50.12
+    host: localhost
     mysqld:
       # you can use either underscore or hyphen in param names
       bind-address: 192.168.50.12
@@ -35,14 +44,9 @@ mysql:
       grants:
         - 'all privileges'
 
+mysql_host:
+  - 192.168.50.12
 
-  user:
-    root:
-      password: 'toor'
-      database: '*'
-      host: '%'
-      grants: ['all privileges']
-
-
-
-
+minions_with_root_acces:
+  - saltminion1
+  - saltminion2

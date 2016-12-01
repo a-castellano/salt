@@ -1,6 +1,3 @@
-include:
-  - mysql.user
-
 /root/.my.cnf:
   file:
     - managed
