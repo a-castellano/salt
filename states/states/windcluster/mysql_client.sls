@@ -7,6 +7,5 @@
     - group: root
     - mode: 755
 
-mysql-client:
-  pkg.installed
-
+include:
+  - mysql.client
