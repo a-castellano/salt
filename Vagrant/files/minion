@@ -1,3 +1,5 @@
 master: saltmaster
 
 hash_type: sha512
+
+mysql.default_file: '/etc/mysql/debian.cnf'
