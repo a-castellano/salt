@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
+echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main" > /etc/apt/sources.list.d/saltstack.list
+
 apt-get update -y
 apt-get upgrade -y
 
@@ -10,7 +13,7 @@ then
         apt-get install -y tree zsh salt-master salt-cloud salt-ssh salt-api salt-syndic python-m2crypto python-mako python-cffi python-cherrypy python-pip python-pygit2 python-libnacl python-mysqldb python-msgpack python-pygit2 python-gnupg python-dulwich vim vim-nox python-dev python3-dev cmake python3-pip
 	pip install --upgrade pip3
 	pip install ioflo msgpack-pure timelib
-	pip3 install 
+	pip3 install
         pip3 install thefuck
 
         wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh

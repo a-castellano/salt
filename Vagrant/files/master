@@ -1,4 +1,4 @@
-worker_threads: 15
+worker_threads: 2
 
 hash_type: sha512
 
@@ -13,6 +13,7 @@ gitfs_provider: GitPython
 file_roots:
   base:
       - /srv/salt/states
+      - /srv/salt/modules
 
 gitfs_remotes:
   - https://github.com/a-castellano/apache-formula.git
