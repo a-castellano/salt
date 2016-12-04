@@ -12,8 +12,7 @@ gitfs_provider: GitPython
 
 file_roots:
   base:
-      - /srv/salt/states
-      - /srv/salt/modules
+      - /srv/salt
 
 gitfs_remotes:
   - https://github.com/a-castellano/apache-formula.git
