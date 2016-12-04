@@ -7,5 +7,3 @@
     - group: root
     - mode: 755
 
-include:
-  - mysql.client
