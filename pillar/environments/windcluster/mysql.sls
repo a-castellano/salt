@@ -39,5 +39,6 @@ mysql:
         - database: foo
           grants: ['all privileges']
 
-mysql_host: 192.168.50.12
+{% set mine_mysql_host = salt['mine.get']('saltminion2', 'network.ip_addrs', 'grain') %}
+mysql_host: {{ mine_mysql_host }}
 
