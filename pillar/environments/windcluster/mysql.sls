@@ -39,6 +39,8 @@ mysql:
         - database: foo
           grants: ['all privileges']
 
-{% set mine_mysql_host = salt['mine.get']('saltminion2', 'network.ip_addrs', 'grain') %}
-mysql_host: {{ mine_mysql_host }}
+
+{% set minion_ips = salt.saltutil.runner('mine.get',tgt='*',fun='network.ip_addrs',tgt_type='glob')['return']['saltminion2'][0] %}
+
+mysql_host: {{ minion_ips }}
 

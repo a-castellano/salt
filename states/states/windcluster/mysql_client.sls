@@ -1,3 +1,6 @@
+mysql-client:
+  pkg.installed
+
 /root/.my.cnf:
   file:
     - managed
@@ -6,4 +9,3 @@
     - user: root
     - group: root
     - mode: 755
-
