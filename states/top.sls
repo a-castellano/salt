@@ -1,12 +1,8 @@
 base:
-  '*':
-    - states.common.ssh_auth
-    - states.common.pkgs
 
   'saltminion*':
-    - states.windcluster.root_ssh_key
-    - states.windcluster.mysql_client
+    - states.openssh
+    - states.system
 
   'saltminion2':
-    - states.windcluster.mysql
-
+    - states.mysql
