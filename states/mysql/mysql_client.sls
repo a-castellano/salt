@@ -4,7 +4,7 @@ mysql-client:
 /root/.my.cnf:
   file:
     - managed
-    - source: salt://states/windcluster/files/my.cnf
+    - source: salt://mysql/files/my.cnf
     - template: jinja
     - user: root
     - group: root
