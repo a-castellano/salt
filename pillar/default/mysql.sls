@@ -7,46 +7,4 @@ mysql:
     mysqld:
       bind-address: '0.0.0.0'
       port: 3306
-      skip-external-locking: noarg_present
-      key_buffer_size: 32M
-      max_allowed_packet: 512M
-      wait_timeout: 600
-      max_connect_errors: 1000000
-      table_open_cache: 256
-      sort_buffer_size: 1M
-      read_buffer_size: 1M
-      read_rnd_buffer_size: 4M
-      myisam_sort_buffer_size: 64M
-      thread_cache_size: 50
-      query_cache_type: 1
-      query_cache_size: 64M
-      local-infile: 0
-      tmp_table_size: 32M
-      max_heap_table_size: 32M
-      max_connections: 500
-      open_files_limit: 65535
-      table_definition_cache: 1024
-      long_query_time: 1
-      slow_query_log: 1
-      slow_query_log_file: /var/log/mysqld-slow-queries.log
-      skip-name-resolve: noarg_present
-      innodb_data_home_dir: /var/lib/mysql
-      innodb_data_file_path: "ibdata1:10M:autoextend"
-      innodb_log_group_home_dir: /var/lib/mysql
-      innodb_buffer_pool_size: 2G
-      innodb_additional_mem_pool_size: 20M
-      innodb_log_file_size: 64M
-      innodb_log_buffer_size: 16M
-      innodb_flush_log_at_trx_commit: 1
-      innodb_lock_wait_timeout: 50
-      innodb_file_per_table: noarg_present
-      join_buffer_size: 16M
-      default_storage_engine: InnoDB
-      innodb_autoinc_lock_mode: 2
-      innodb_autoinc_lock_mode: 2
-      innodb_locks_unsafe_for_binlog: 1
       datadir: /var/lib/mysql
-      tmpdir: /tmp
-      user: mysql
-      character-set-server: 'utf8'
-      collation-server: 'utf8_general_ci'

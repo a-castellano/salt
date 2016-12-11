@@ -1,8 +1,9 @@
 base:
 
   'saltminion*':
-    - states.openssh
-    - states.system
+    - openssh.openssh
+    - system.system
+    - mysql.mysql_client
 
   'saltminion2':
-    - states.mysql
+    - mysql.mysql
