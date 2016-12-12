@@ -2,3 +2,4 @@
 Vagrant/.vagrant/*
 .*.swp
 *.pyc
+*.slsc
