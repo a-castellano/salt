@@ -29,8 +29,8 @@ php:
               listen.owner: www-data
               listen.group: www-data
               listen.mode: "0666"
-              user: nginx
-              group: nginx
+              user: www-data
+              group: www-data
               pm: dynamic
               pm.max_children: 20
               pm.start_servers: 10
