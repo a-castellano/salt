@@ -13,13 +13,13 @@ php:
       config:
         conf:
           settings:
-            include: '/etc/php/7.0/fpm/*.conf
+            include: "/etc/php/7.0/fpm/*.conf"
             global:
               pid: /var/run/php/php7.0-fpm.pid
               error_log: /var/log/php-fpm/error.log
               daemonize: "yes"
       pools:
-        'www.conf':
+        "www.conf":
           # If true, the pool file will be managed, if False it will be absent
           enabled: True
           settings:
@@ -41,9 +41,8 @@ php:
               ping.path: /php5fpm-ping
               request_slowlog_timeout: 2s
               slowlog: /var/log/php-fpm/www-slow.log
-              'php_admin_value[error_log]': /var/log/php-fpm/www-error.log
-              'php_admin_flag[log_errors]': 'on'
-              'php_value[session.save_handler]': files
-              'php_value[session.save_path]': /var/lib/php/session
-              'php_value[memory_limit]': 256M      
-      
+              "php_admin_value[error_log]": /var/log/php-fpm/www-error.log
+              "php_admin_flag[log_errors]": "on"
+              "php_value[session.save_handler]": files
+              "php_value[session.save_path]": /var/lib/php/session
+              "php_value[memory_limit]": 256M
