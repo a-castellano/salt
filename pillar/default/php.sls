@@ -13,7 +13,7 @@ php:
       config:
         conf:
           settings:
-            include: "/etc/php/7.0/fpm/*.conf"
+            include: "/etc/php/7.0/fpm/pool.d/*.conf"
             global:
               pid: /var/run/php/php7.0-fpm.pid
               error_log: /var/log/php-fpm/error.log
