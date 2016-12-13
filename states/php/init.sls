@@ -21,14 +21,6 @@ install_extra_packages:
       - {{ package }}
 {% endfor %}
 {% endif %}
-
-{% if pillar['php']['ng']['lookup']['opcode'] %}
-      - {{ pillar['php']['ng']['lookup']['opcode'] }}
-{% endif %}
       - php-xmlrpc
-      - php-magickwand
       - php-snmp
       - php-tidy
-      - php-pecl-geoip
-      - php-pecl-lzf
-      - php-pecl-ssh2
