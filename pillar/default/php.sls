@@ -20,6 +20,7 @@ php:
               daemonize: "yes"
       pools:
         'www.conf':
+          # If true, the pool file will be managed, if False it will be absent
           enabled: True
           settings:
             www:
@@ -44,4 +45,5 @@ php:
               'php_admin_flag[log_errors]': 'on'
               'php_value[session.save_handler]': files
               'php_value[session.save_path]': /var/lib/php/session
-              'php_value[memory_limit]': 256M
+              'php_value[memory_limit]': 256M      
+      
