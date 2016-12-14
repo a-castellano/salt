@@ -8,6 +8,7 @@ base:
   'saltminion1':
     - php.init
     - php.install
+    - nginx.init
 
   'saltminion2':
     - mysql.mysql

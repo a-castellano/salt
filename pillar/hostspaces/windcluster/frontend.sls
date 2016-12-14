@@ -17,6 +17,7 @@ def run():
   pillar['system'] = demiurge.system
   pillar['openssh'] = remodel_openssh(demiurge.openssh)
   pillar['php'] = demiurge.php
+  pillar['nginx'] = demiurge.nginx
 
   return pillar
 
