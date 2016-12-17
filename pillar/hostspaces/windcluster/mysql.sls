@@ -28,7 +28,7 @@ def remodel_mysql(mysql, hostspace):
   mysql['server']['host'] = 'localhost'
 
 
-  db_host_ip = salt.saltutil.runner('mine.get',tgt='*',fun='network.ip_addrs',tgt_type='glob')['return'][hostspace.hostspace['hosts']['db_host']]
+  db_host_ip = salt.saltutil.runner('mine.get',tgt='*',fun='network.ip_addrs',tgt_type='glob')[hostspace.hostspace['hosts']['db_host']]
 
   mysql['server']['mysqld']['bind-address'] = db_host_ip
 

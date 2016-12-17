@@ -1,4 +1,5 @@
 nginx:
+  use_upstart: False
   ng:
     lookup:
       conf_file: /etc/nginx/nginx.conf
@@ -6,11 +7,6 @@ nginx:
       vhost_enabled: /etc/nginx/sites-enabled
       vhost_use_symlink: True
 
-    certificates:
-      private: privatekey
-      public: certificate
-
-    from_source: False
     service:
       enable: True
 

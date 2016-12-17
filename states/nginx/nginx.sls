@@ -1,6 +1,8 @@
 include:
   - nginx.ng
 
+
+
 remove_default.conf:
   file.absent:
     - name: /etc/nginx/conf.d/default.conf
