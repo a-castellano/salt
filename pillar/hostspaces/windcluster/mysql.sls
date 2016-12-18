@@ -33,7 +33,7 @@ def remodel_mysql(mysql, hostspace):
   mysql['server']['mysqld']['bind-address'] = db_host_ip
 
   mysql['mysql_host'] = db_host_ip
-
+  mysql['mysql_hostname'] = hostspace.hostspace['hosts']['db_host']
   mysql['user'] = { mysql['server']['root_user']: {
                     'password': mysql['server']['root_password'],
                     'host': '%',
