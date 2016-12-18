@@ -22,11 +22,11 @@ def run():
 
 def remodel_mysql(mysql, hostspace):
 
- mysql['user'] = { mysql['server']['root_user']: {
+  mysql['user'] = { mysql['server']['root_user']: {
                     'password': mysql['server']['root_password'],
                     'host': '%',
                     'databases': [],
                   }
-  }
+   }
 
   return mysql

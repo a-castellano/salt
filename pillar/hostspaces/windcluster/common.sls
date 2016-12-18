@@ -16,7 +16,7 @@ def run():
 
   pillar['system'] = demiurge.system
   pillar['openssh'] = remodel_openssh(demiurge.openssh)
-  pillar['mysql'] = remodel_mysql(demiurge.mysql, hostsapce)
+  pillar['mysql'] = remodel_mysql(demiurge.mysql, hostspace)
 
   return pillar
 

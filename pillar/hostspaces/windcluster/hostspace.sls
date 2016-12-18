@@ -5,8 +5,9 @@ hostspace:
   hosts:
     frontends:
       saltminion1
-    backends:
       saltminion2
+    backends:
+      saltminion4
 
     db_host:
-      saltminion2
+      saltminion4
