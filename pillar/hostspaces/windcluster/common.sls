@@ -16,6 +16,7 @@ def run():
 
   pillar['system'] = demiurge.system
   pillar['openssh'] = remodel_openssh(demiurge.openssh)
+  pillar['mysql'] = remodel_mysql(demiurge.mysql, hostsapce)
 
   return pillar
 
@@ -31,3 +32,20 @@ def remodel_openssh(openssh):
                                    ]
 
   return openssh
+
+def remodel_mysql(mysql, hostspace):
+
+  mysql['server']['root_user'] = 'root'
+  mysql['server']['root_password'] = 'toor'
+  mysql['server']['log_bin'] = '/var/log/mysql/mysql-bin.log'
+  mysql['server']['host'] = 'localhost'
+
+
+  db_host_ip = salt.saltutil.runner('mine.get',tgt='*',fun='network.ip_addrs',tgt_type='glob')[hostspace.hostspace['hosts']['db_host']]
+
+  mysql['server']['mysqld']['bind-address'] = db_host_ip
+
+  mysql['mysql_host'] = db_host_ip
+  mysql['mysql_hostname'] = hostspace.hostspace['hosts']['db_host']
+
+  return mysql

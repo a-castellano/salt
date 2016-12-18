@@ -5,10 +5,10 @@ base:
     - system.system
     - mysql.mysql_client
 
-  'saltminion1':
-    - php.init
+  'saltminion1,saltminion2':
+    - php
     - php.install
-    - nginx.init
+    - nginx
 
-  'saltminion2':
+  'saltminion4':
     - mysql.mysql

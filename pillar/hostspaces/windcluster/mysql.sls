@@ -22,19 +22,7 @@ def run():
 
 def remodel_mysql(mysql, hostspace):
 
-  mysql['server']['root_user'] = 'root'
-  mysql['server']['root_password'] = 'toor'
-  mysql['server']['log_bin'] = '/var/log/mysql/mysql-bin.log'
-  mysql['server']['host'] = 'localhost'
-
-
-  db_host_ip = salt.saltutil.runner('mine.get',tgt='*',fun='network.ip_addrs',tgt_type='glob')[hostspace.hostspace['hosts']['db_host']]
-
-  mysql['server']['mysqld']['bind-address'] = db_host_ip
-
-  mysql['mysql_host'] = db_host_ip
-  mysql['mysql_hostname'] = hostspace.hostspace['hosts']['db_host']
-  mysql['user'] = { mysql['server']['root_user']: {
+ mysql['user'] = { mysql['server']['root_user']: {
                     'password': mysql['server']['root_password'],
                     'host': '%',
                     'databases': [],
