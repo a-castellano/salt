@@ -1,9 +1,9 @@
 VAGRANTFILE_API_VERSION = "2"
-MINIONS = 2
+MINIONS = 4
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
+      vb.memory = 512
       vb.cpus = 1
   end
 
