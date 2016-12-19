@@ -1,7 +1,3 @@
-#create_htpasswd_file:
-#  file.touch
-#    - name: "/etc/nginx/.htpasswd"
-
 remove_default.conf:
   file.absent:
     - name: /etc/nginx/conf.d/default.conf
