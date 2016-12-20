@@ -16,17 +16,25 @@ def run():
 
   pillar = {}
 
-  pillar['mysql'] = remodel_mysql(demiurge.mysql, hostspace)
+  pillar['mysql'] = remodel_mysql(demiurge.mysql, dedalus)
 
   return pillar
 
-def remodel_mysql(mysql, hostspace):
+def remodel_mysql(mysql, dedalus):
 
-  mysql['user'] = { mysql['server']['root_user']: {
-                    'password': mysql['server']['root_password'],
-                    'host': '%',
-                    'databases': [],
-                  }
-   }
+  if dedalus.DATABASES:
+
+    mysql['database'] = []
+
+    for database in dedalus.DATABASES:
+
+      mysql['database'].append(dedalus.DATABASES[database]['db_name'])
+
+      mysql['user'][dedalus.DATABASES[database]['db_user']] = mysql['user'].get(dedalus.DATABASES[database]['db_user'],  {
+                                                                                                                          'password': dedalus.DATABASES[database]['db_pass'],
+                                                                                                                          'host': dedalus.DATABASES[database]['db_host'],
+                                                                                                                          'databases': [],
+                                                                                                                          })
+      mysql['user'][dedalus.DATABASES[database]['db_user']]['databases'].append({'database': dedalus.DATABASES[database]['db_name'],'grants': ['all privileges']})
 
   return mysql
