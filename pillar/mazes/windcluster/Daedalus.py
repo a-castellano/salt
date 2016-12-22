@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-class Dedalus():
+class Daedalus():
 
+    MAKINGS = {
+            ''
+            }
+
+    ROOT_DATABASE_PASSWORD = 'toor'
     DATABASES = {
             'wind_db' : {
                     'db_name': 'windmaker_db',

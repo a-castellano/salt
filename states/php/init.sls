@@ -12,7 +12,7 @@ include:
   - php.ng.redis
   - php.ng.soap
   - php.ng.xml
-  
+
 install_extra_packages:
   pkg.installed:
     - pkgs:

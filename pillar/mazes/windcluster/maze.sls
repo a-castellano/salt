@@ -1,4 +1,4 @@
-hostspace:
+maze:
   network:
     dns: '8.8.8.8;8.8.4.4'
 

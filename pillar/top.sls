@@ -1,14 +1,14 @@
 base:
 
   'saltminion*':
-    - hostspaces.windcluster.common
-    - hostspaces.windcluster.mysql
+    - mazes.windcluster.common
+    - mazes.windcluster.mysql
 
   'saltminion1':
-    - hostspaces.windcluster.frontend
+    - mazes.windcluster.frontend
 
   'saltminion2':
-    - hostspaces.windcluster.frontend
+    - mazes.windcluster.frontend
 
   'saltminion4':
-    - hostspaces.windcluster.mysql
+    - mazes.windcluster.mysql

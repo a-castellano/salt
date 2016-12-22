@@ -64,4 +64,3 @@ nginx:
             - /etc/nginx/conf.d/*.conf
             - /etc/nginx/sites-enabled/*
 
-#    vhosts:

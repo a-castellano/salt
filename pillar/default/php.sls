@@ -49,7 +49,7 @@ php:
 
     ini:
       defaults:
-      
+
         PHP:
           engine: "On"
           short_open_tag: "On"
@@ -84,7 +84,6 @@ php:
           register_argc_argv: "Off"
           auto_globals_jit: "On"
           post_max_size: 8M
-          auto_prepend_file: "/var/www/xhprof.zen.onestic.com/xhprof_profiler.php"
           auto_append_file: ""
           default_mimetype: "text/html"
           doc_root: ""
