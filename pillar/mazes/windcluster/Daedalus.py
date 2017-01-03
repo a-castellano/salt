@@ -3,9 +3,18 @@
 
 class Daedalus():
 
-    MAKINGS = {
-            ''
-            }
+    ### AUTH
+
+    SSH_AUTH = {
+        'root': [
+                  'AAAAB3NzaC1yc2EAAAADAQABAAABAQCoDeg52mYgYidGli6nqEDMlb6mZQlDV10EY6Y9twnFwAddcbs0YtFnVs045WVpxWWS42Sm9FPC/PYv9aNDuB+7RO6THAiAYpj4VsElm2Xkt21PiIrd2GBwMIvN25FDhAYTzpXCGabEKviKZx7vx5j/huzDvdom5DUfLtCjTH9XydJsakspM2UZDhrnc8+R1yZV+TCXjy9l/w1kkplkziwpLadzVUzhSQmPqAMkgVVnT7kw2FmDe8PJTZNB/gMmCSUS+ONULu2XrR4/ExnORf2CyHcr234TZAIUhjOta66UPjFIapoXrZFhnpjOZTnSd5BPTVINDt4fkutytDw4pe7x'
+                 ]
+    }
+
+    ### WEB
+
+    WEB_USERS = ["windmaker"]
+    WEB_PATH = '/var/www'
 
     ROOT_DATABASE_PASSWORD = 'toor'
     DATABASES = {
@@ -15,17 +24,9 @@ class Daedalus():
                     'db_pass': 'woshwosh',
                     'db_host': '%',
                     'origin': False,
-                    'location': 'define it if origin is remote or local',
-                },
-             'wind_db_delete_me' : {
-                    'db_name': 'windmaker_db2',
-                    'db_user': 'windmaker',
-                    'db_pass': 'woshwosh',
-                    'db_host': '%',
-                    'origin': False,
-                    'location': 'define it if origin is remote or local',
+                    'location': 'only_create',
                 }
-            }
+    }
 
     '''
     Source can be:
@@ -37,3 +38,14 @@ class Daedalus():
           - remote -> (ssh) user@host:/pathto_sql_fiel
           - local -> name of the sql archive
     '''
+
+    OPUS = {
+        'windmaker_wp' :{
+            'databases': [ DATABASES['wind_db'] ],
+            'repo': 'https://github.com/a-castellano/windcluster_wp.git',
+            'root': 'wp.windmaker.net',
+            'opus_type': 'wordpress',
+        }
+    }
+
+

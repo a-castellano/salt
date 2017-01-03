@@ -15,23 +15,31 @@ def run():
   pillar = {}
 
   pillar['system'] = demiurge.system
-  pillar['openssh'] = remodel_openssh(demiurge.openssh)
+  pillar['openssh'] = remodel_openssh(demiurge.openssh, daedalus)
   pillar['mysql'] = remodel_mysql(demiurge.mysql, maze, daedalus)
 
   return pillar
 
-def remodel_openssh(openssh):
+####
 
-  openssh['auth']['windcluster'] = [
-                                      {'user': 'root',
-                                       'name': 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCoDeg52mYgYidGli6nqEDMlb6mZQlDV10EY6Y9twnFwAddcbs0YtFnVs045WVpxWWS42Sm9FPC/PYv9aNDuB+7RO6THAiAYpj4VsElm2Xkt21PiIrd2GBwMIvN25FDhAYTzpXCGabEKviKZx7vx5j/huzDvdom5DUfLtCjTH9XydJsakspM2UZDhrnc8+R1yZV+TCXjy9l/w1kkplkziwpLadzVUzhSQmPqAMkgVVnT7kw2FmDe8PJTZNB/gMmCSUS+ONULu2XrR4/ExnORf2CyHcr234TZAIUhjOta66UPjFIapoXrZFhnpjOZTnSd5BPTVINDt4fkutytDw4pe7x',
-                                       'present': True,
-                                       'env': 'ssh-rsa',
-                                       'comment': 'windcluster_key',
-                                      }
-                                   ]
+def remodel_openssh(openssh, daedalus):
+
+  for user in daedalus.SSH_AUTH:
+    user_id = 'auth_ssh_' + user
+    openssh['auth'][user_id] = []
+    for key in daedalus.SSH_AUTH[user]:
+      comment = user_id
+      openssh['auth'][user_id] .append({
+            'user': user,
+            'name': key,
+            'present': True,
+            'env': 'ssh-rsa',
+            'comment': comment,
+         })
+
 
   return openssh
+
 
 def remodel_mysql(mysql, maze, daedalus):
 
@@ -49,3 +57,5 @@ def remodel_mysql(mysql, maze, daedalus):
   mysql['mysql_hostname'] = maze.maze['hosts']['db_host']
 
   return mysql
+
+

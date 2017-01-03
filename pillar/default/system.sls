@@ -10,3 +10,4 @@ system:
     - ncdu
     - curl
     - openssl
+    - ncdu

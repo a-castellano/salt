@@ -9,11 +9,13 @@ base:
     - php
     - php.install
     - nginx
+    - opus
 
   'saltminion2':
     - php
     - php.install
     - nginx
+    - opus
 
   'saltminion4':
     - mysql
