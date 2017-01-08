@@ -24,3 +24,4 @@ install_extra_packages:
       - php-xmlrpc
       - php-snmp
       - php-tidy
+      - php-mysql

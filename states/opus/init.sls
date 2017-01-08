@@ -5,7 +5,7 @@ opus_{{ opus }}_repo:
     - name: {{ pillar['opus'][opus]['repo'] }}
     - target: {{ pillar['opus'][opus]['path'] }}
 
-{{ pillar['opus'][opus]['path']  }}:
+{{ pillar['opus'][opus]['path'] }}:
   file.directory:
     - user: {{ pillar['opus'][opus]['user'] }}
     - group: {{ pillar['opus'][opus]['group'] }}
@@ -27,6 +27,21 @@ opus_{{ opus }}_repo:
     - mode: 755
     - defaults:
         target: {{opus}}
+
+{% endif %}
+
+{% if  pillar['opus'][opus]['opus_type'] == 'wordpress' %}
+{{ pillar['opus'][opus]['path'] }}/wp-config.php:
+  file:
+    - managed
+    - source: salt://templates/default/wordpress/wp-config.php
+    - template: jinja
+    - user: {{ pillar['opus'][opus]['user'] }}
+    - group: {{ pillar['opus'][opus]['group'] }}
+    - mode: {{ pillar['opus'][opus]['mode'] }}
+    - defaults:
+        target: {{opus}}
+
 
 {% endif %}
 

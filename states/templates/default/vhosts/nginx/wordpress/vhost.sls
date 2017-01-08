@@ -4,7 +4,7 @@ server {
     root {{pillar['opus'][target]['path']}};
     index index.php index.html index.htm;
 
-    server_name site1.example.org;
+    server_name {{pillar['opus'][target]['server_name']}};
 
     location / {
         try_files $uri $uri/ =404;

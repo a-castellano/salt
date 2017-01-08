@@ -47,12 +47,12 @@ class Daedalus():
 
     OPUS = {
         'windmaker_wp' :{
-            'databases': [ DATABASES['wind_db'] ],
+            'database': [ DATABASES['wind_db']][0],
             'repo': 'https://github.com/a-castellano/windcluster_wp.git',
             'root': WEB_PATH + 'wp.windmaker.net',
             'opus_type': 'wordpress',
             'vhost_type': 'template', #custom_template, custom
-            'server_name': ['wp.windmaker.net'],
+            'server_names': ['windcluster_wp.windmaker.net'],
             'port': WEB_PORT,
             'server_type': WEB_SERVER,
             'user': WEB_USER,
@@ -67,7 +67,7 @@ class Daedalus():
                 'LOGGED_IN_KEY': '8>E+Yx~#]d)_c+l|uBspn,zM?GnBf+cbAsgWlbw*:3fwvPJ^z#0(,|Btg7lvBXWF',
                 'NONCE_KEY': 'a[c|$a>DU%fqR(qSFEJVdd~ukc|{4E@}#uGscFYC:b#%E~p-q_{U6Y:.j|>r!%T+',
                 'AUTH_SALT': 'ON~KG`x~^eR3$OO4(VIlE;cvqoOE<iI^9Z-uVwdDG1J%``f-F9I}pbY)ycw$d]JO',
-                'SECURE_AUTH_SALT': 'B+>*0JRA?r;[0Z[r;]r7~p9ty.5y-OOf.5QPpLdnkHOG,~va:Fj`d@@wz(.1|+y{,
+                'SECURE_AUTH_SALT': 'B+>*0JRA?r;[0Z[r;]r7~p9ty.5y-OOf.5QPpLdnkHOG,~va:Fj`d@@wz(.1|+y{',
                 'LOGGED_IN_SALT': 'Gfkz|@#fA.pFZ{1Po;z9mlX_G I&3~(=.4A^S%DCcYby-O:,urimq>wLd7t%4hiC',
                 'NONCE_SALT': 'cf<m/0Lm[Y6G:fzm+bW!Tgd0(<Dqynnb$Fok%t/h}+/ZqGv&DoAsAQHm26IQMo$b',
                 }

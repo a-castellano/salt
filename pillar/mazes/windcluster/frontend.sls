@@ -26,7 +26,6 @@ def run():
 
 def remodel_nginx(nginx):
 
-  
 
   return nginx
 
@@ -36,5 +35,5 @@ def make_opus(opus, daedalus):
     opus[item] = daedalus.OPUS[item]
     opus[item]['path'] = daedalus.WEB_PATH + item
     opus[item]['vhost'] = daedalus.SITES_ENABLED + item + '.cfg'
-
+    opus[item]['server_name'] = ' '.join(opus[item]['server_names'])
   return opus
