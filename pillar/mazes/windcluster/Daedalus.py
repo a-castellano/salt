@@ -16,8 +16,11 @@ class Daedalus():
     ### WEB
 
     WEB_SERVER = 'nginx'
+    SITES_ENABLED = '/etc/nginx/sites-enabled/'
+    WEB_PORT = 80
+    WEB_USER = 'www-data'
     WEB_USERS = ['windmaker']
-    WEB_PATH = '/var/www'
+    WEB_PATH = '/var/www/'
 
     ROOT_DATABASE_PASSWORD = 'toor'
     DATABASES = {
@@ -28,9 +31,7 @@ class Daedalus():
                     'db_host': '%',
                     'origin': False,
                     'location': 'only_create',
-                    'server_name': ['windcluster_wp.windmaker.net'],
-                    'port': 80,
-                }
+               }
     }
 
     '''
@@ -48,9 +49,28 @@ class Daedalus():
         'windmaker_wp' :{
             'databases': [ DATABASES['wind_db'] ],
             'repo': 'https://github.com/a-castellano/windcluster_wp.git',
-            'root': 'wp.windmaker.net',
+            'root': WEB_PATH + 'wp.windmaker.net',
             'opus_type': 'wordpress',
-            'vhost_type': 'tamplate', #custom_template, custom
+            'vhost_type': 'template', #custom_template, custom
+            'server_name': ['wp.windmaker.net'],
+            'port': WEB_PORT,
+            'server_type': WEB_SERVER,
+            'user': WEB_USER,
+            'group': WEB_USER,
+            'mode': 755,
+            'app':
+            {
+                'DB_CHARSET': '',
+                'COLLATE': '',
+                'AUTH_KEY': '',
+                'SECURE_AUTH_KEY': '',
+                'LOGGED_IN_KEY': '',
+                'NONCE_KEY': '',
+                'AUTH_SALT': '',
+                'SECURE_AUTH_SALT': '',
+                'LOGGED_IN_SALT': '',
+                'NONCE_SALT': '',
+                }
         }
     }
 

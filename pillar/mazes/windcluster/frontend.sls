@@ -34,7 +34,7 @@ def make_opus(opus, daedalus):
 
   for item in daedalus.OPUS:
     opus[item] = daedalus.OPUS[item]
-    opus[item]['path'] = daedalus.WEB_PATH + '/' + item
-    opus[item]['vhost'] = item + '.cfg'
+    opus[item]['path'] = daedalus.WEB_PATH + item
+    opus[item]['vhost'] = daedalus.SITES_ENABLED + item + '.cfg'
 
   return opus
