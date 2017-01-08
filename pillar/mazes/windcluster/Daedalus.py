@@ -60,16 +60,16 @@ class Daedalus():
             'mode': 755,
             'app':
             {
-                'DB_CHARSET': '',
-                'COLLATE': '',
-                'AUTH_KEY': '',
-                'SECURE_AUTH_KEY': '',
-                'LOGGED_IN_KEY': '',
-                'NONCE_KEY': '',
-                'AUTH_SALT': '',
-                'SECURE_AUTH_SALT': '',
-                'LOGGED_IN_SALT': '',
-                'NONCE_SALT': '',
+                'DB_CHARSET': 'utf8mb4',
+                'DB_COLLATE': 'utf8_unicode_ci',
+                'AUTH_KEY': 'iY@4V--$[%g^n;;dU2bt heQI#]+$V`SD0b^19ULLALCQ}]!xJvqr$86)i!|-W-i',
+                'SECURE_AUTH_KEY': '3x {,8_1WVFqa8QZN|w^-0:r%ax0z.r.-.?)VGx`pK!f|*0kRV+lZOObzURFqdg{',
+                'LOGGED_IN_KEY': '8>E+Yx~#]d)_c+l|uBspn,zM?GnBf+cbAsgWlbw*:3fwvPJ^z#0(,|Btg7lvBXWF',
+                'NONCE_KEY': 'a[c|$a>DU%fqR(qSFEJVdd~ukc|{4E@}#uGscFYC:b#%E~p-q_{U6Y:.j|>r!%T+',
+                'AUTH_SALT': 'ON~KG`x~^eR3$OO4(VIlE;cvqoOE<iI^9Z-uVwdDG1J%``f-F9I}pbY)ycw$d]JO',
+                'SECURE_AUTH_SALT': 'B+>*0JRA?r;[0Z[r;]r7~p9ty.5y-OOf.5QPpLdnkHOG,~va:Fj`d@@wz(.1|+y{,
+                'LOGGED_IN_SALT': 'Gfkz|@#fA.pFZ{1Po;z9mlX_G I&3~(=.4A^S%DCcYby-O:,urimq>wLd7t%4hiC',
+                'NONCE_SALT': 'cf<m/0Lm[Y6G:fzm+bW!Tgd0(<Dqynnb$Fok%t/h}+/ZqGv&DoAsAQHm26IQMo$b',
                 }
         }
     }
