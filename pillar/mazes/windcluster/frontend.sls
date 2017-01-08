@@ -15,8 +15,10 @@ def run():
   pillar = {}
 
   pillar['php'] = demiurge.php
-  pillar['nginx'] = remodel_nginx(demiurge.nginx)
   pillar['opus'] = make_opus(demiurge.opus, daedalus)
+
+  if daedalus.WEB_SERVER == 'nginx':
+    pillar['nginx'] = remodel_nginx(demiurge.nginx)
 
   return pillar
 
@@ -33,5 +35,6 @@ def make_opus(opus, daedalus):
   for item in daedalus.OPUS:
     opus[item] = daedalus.OPUS[item]
     opus[item]['path'] = daedalus.WEB_PATH + '/' + item
+    opus[item]['vhost'] = item + '.cfg'
 
   return opus

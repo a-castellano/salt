@@ -3,6 +3,8 @@
 
 class Daedalus():
 
+    MAZE_NAME = 'windcluster'
+
     ### AUTH
 
     SSH_AUTH = {
@@ -13,7 +15,8 @@ class Daedalus():
 
     ### WEB
 
-    WEB_USERS = ["windmaker"]
+    WEB_SERVER = 'nginx'
+    WEB_USERS = ['windmaker']
     WEB_PATH = '/var/www'
 
     ROOT_DATABASE_PASSWORD = 'toor'
@@ -25,6 +28,8 @@ class Daedalus():
                     'db_host': '%',
                     'origin': False,
                     'location': 'only_create',
+                    'server_name': ['windcluster_wp.windmaker.net'],
+                    'port': 80,
                 }
     }
 
@@ -45,6 +50,7 @@ class Daedalus():
             'repo': 'https://github.com/a-castellano/windcluster_wp.git',
             'root': 'wp.windmaker.net',
             'opus_type': 'wordpress',
+            'vhost_type': 'tamplate', #custom_template, custom
         }
     }
 
