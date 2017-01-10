@@ -2,8 +2,20 @@ base:
 
   'saltminion*':
     - openssh.openssh
-    - system.system
+    - system
     - mysql.mysql_client
 
+  'saltminion1':
+    - php
+    - php.install
+    - nginx
+    - opus
+
   'saltminion2':
-    - mysql.mysql
+    - php
+    - php.install
+    - nginx
+    - opus
+
+  'saltminion4':
+    - mysql

@@ -33,7 +33,7 @@ then
         vim +PluginInstall +qall
 
         echo "127.0.0.1   saltmaster" >> /etc/hosts
-        git clone -b generator https://github.com/a-castellano/salt.git /srv/salt
+        git clone -b lemp_setup https://github.com/a-castellano/salt.git /srv/salt
         cp /vagrant/files/master /etc/salt/master
         service salt-master restart
 

@@ -1,5 +1,5 @@
 VAGRANTFILE_API_VERSION = "2"
-MINIONS = 2
+MINIONS = 5
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     master_config.vm.box = "ubuntu/xenial64"
     master_config.vm.host_name = 'saltmaster'
     master_config.vm.network "private_network", ip: "192.168.50.10"
+    master_config.vm.network "forwarded_port", guest: 80, host: 8080
     master_config.vm.provision :shell, path: "bootstrap.sh", :args => "saltmaster #{MINIONS}"
   end
 
@@ -20,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     	minion_config.vm.box = "ubuntu/xenial64"
     	minion_config.vm.host_name = "saltminion#{i}"
     	minion_config.vm.network "private_network", ip: "192.168.50.1#{i}"
+        minion_config.vm.network "forwarded_port", guest: 80, host: 808{i}
     	minion_config.vm.provision :shell, path: "bootstrap.sh", :args => "saltminion#{i} #{MINIONS}"
   	end
 
